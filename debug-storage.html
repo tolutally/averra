@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vouchline Storage Debug</title>
+</head>
+<body>
+    <h1>Vouchline Storage Debug</h1>
+    <button onclick="clearStorage()">Clear All Storage</button>
+    <button onclick="showStorage()">Show Storage</button>
+    <button onclick="fixCaseStructure()">Fix Case Structure</button>
+    <div id="output"></div>
+
+    <script>
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById('output').innerHTML = '<p>Storage cleared!</p>';
+        }
+
+        function showStorage() {
+            const cases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+            const output = document.getElementById('output');
+            output.innerHTML = '<h2>Current Cases:</h2><pre>' + JSON.stringify(cases, null, 2) + '</pre>';
+        }
+
+        function fixCaseStructure() {
+            const cases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+            const fixedCases = cases.map(case_ => {
+                if (case_.requirements && !case_.steps) {
+                    return {
+                        ...case_,
+                        steps: case_.requirements,
+                        // Remove the old requirements property
+                        requirements: undefined
+                    };
+                }
+                return case_;
+            }).map(case_ => {
+                const { requirements, ...caseWithoutRequirements } = case_;
+                return caseWithoutRequirements;
+            });
+            
+            localStorage.setItem('vouchline_cases', JSON.stringify(fixedCases));
+            document.getElementById('output').innerHTML = '<p>Cases structure fixed! Converted requirements to steps.</p>';
+            showStorage();
+        }
+
+        // Auto-show storage on load
+        window.onload = showStorage;
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Accordion animation utilities */
+.accordion-content {
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion-header:hover {
+  background-color: rgba(var(--muted-rgb), 0.5);
+}
+
+/* Smooth expand/collapse animations */
+@keyframes accordionDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordionUp {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.accordion-animate-down {
+  animation: accordionDown 0.2s ease-out;
+}
+
+.accordion-animate-up {
+  animation: accordionUp 0.2s ease-out;
+}
+
+/* Template card collapse animations */
+.template-card-details {
+  animation: templateCardExpand 0.2s ease-out;
+  transform-origin: top;
+}
+
+@keyframes templateCardExpand {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.template-card-header {
+  transition: background-color 0.15s ease-in-out;
+}
+
+.template-card-progress {
+  transition: width 0.3s ease-in-out;
+}

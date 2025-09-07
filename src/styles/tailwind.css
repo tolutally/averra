@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand (Lilac) */
+    --brand-100: #F4F2FF;
+    --brand-200: #E9E5FF;
+    --brand-300: #E3DFFF;
+    --brand-400: #B8A9F8;
+    --brand-500: #9B8CF5;
+    --brand-600: #7D6EF0;
+    --brand-700: #6E5AE6;
+    --brand-800: #5E4EE0;
+    --brand-900: #4C3BC7;
+
+    /* Action (Charcoal buttons/sidebar) */
+    --action-300: #CBD5E1;
+    --action-400: #94A3B8;
+    --action-500: #64748B;
+    --action-600: #475569;
+    --action-700: #334155;
+    --action-800: #1E293B;
+    --action-900: #0F172A;
+
+    /* Neutrals */
+    --neutral-50: #F6F5F3;
+    --neutral-100: #FAFAF9;
+    --neutral-200: #F1F5F9;
+    --neutral-250: #E5E7EB;
+    --neutral-400: #94A3B8;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1F2937;
+    --neutral-900: #111827;
+    --white: #FFFFFF;
+
+    /* Status */
+    --success-600: #16A34A;
+    --warning-600: #B45309;
+    --danger-600: #DC2626;
+    --info-600: #0284C7;
+
+    /* Negative Action (Light Orange) */
+    --negative-bg: #FFF7E6;
+    --negative-text: #9A3412;
+    --negative-border: #FED7AA;
+    --negative-hover-bg: #FFEDD5;
+
+    /* Surfaces */
+    --surface-page: var(--neutral-50);
+    --surface-card: var(--white);
+    --surface-alt: var(--neutral-100);
+    --surface-border: var(--neutral-250);
+
+    /* Text */
+    --text-strong: var(--neutral-800);
+    --text-body: var(--neutral-700);
+    --text-muted: var(--neutral-600);
+    --text-inverse: var(--white);
+
+    /* Links & focus */
+    --link: var(--brand-700);
+    --link-hover: var(--brand-800);
+    --focus-ring: var(--brand-700);
+
+    /* Buttons */
+    --btn-primary-bg: var(--action-800);
+    --btn-primary-bg-hover: var(--action-900);
+    --btn-primary-bg-active: var(--action-900);
+    --btn-primary-text: var(--text-inverse);
+    --btn-secondary-bg: var(--white);
+    --btn-secondary-text: var(--text-body);
+    --btn-secondary-border: var(--surface-border);
+    --btn-danger-bg: var(--danger-600);
+    --btn-danger-text: var(--text-inverse);
+
+    /* Sidebar (dark) */
+    --sidebar-bg: var(--action-900);
+    --sidebar-divider: var(--action-700);
+    --sidebar-text: var(--action-300);
+    --sidebar-text-active: var(--text-inverse);
+    --sidebar-item-active-bg: var(--brand-600);
+    --sidebar-item-hover-bg: rgba(125, 110, 240, 0.1);
+    --sidebar-icon-muted: var(--action-400);
+    --sidebar-accent: var(--brand-600);
+
+    /* Banners (pastel tints) */
+    --banner-info-bg: #EFF6FF;
+    --banner-info-text: #075985;
+    --banner-info-border: #BFDBFE;
+    --banner-success-bg: #F0FDF4;
+    --banner-success-text: #166534;
+    --banner-success-border: #BBF7D0;
+    --banner-warning-bg: #FFF7E6;
+    --banner-warning-text: #92400E;
+    --banner-warning-border: #FDE68A;
+    --banner-danger-bg: #FEF2F2;
+    --banner-danger-text: #991B1B;
+    --banner-danger-border: #FECACA;
+    --banner-brand-bg: var(--brand-100);
+    --banner-brand-text: var(--brand-800);
+    --banner-brand-border: var(--brand-300);
+
+    /* Pills/Chips */
+    --pill-bg: var(--brand-100);
+    --pill-text: var(--brand-800);
+    --pill-border: var(--brand-300);
+
+    /* Priority Pastels - Monochrome Dark Blue */
+    --priority-low-bg: #F8FAFC;
+    --priority-low-text: #64748B;
+    --priority-low-border: #E2E8F0;
+    --priority-medium-bg: #F1F5F9;
+    --priority-medium-text: #475569;
+    --priority-medium-border: #CBD5E1;
+    --priority-high-bg: #E2E8F0;
+    --priority-high-text: #334155;
+    --priority-high-border: #94A3B8;
+
+    /* Workflow Type Pastels - Monochrome Dark Blue */
+    --workflow-onboarding-bg: #F1F5F9;
+    --workflow-onboarding-text: #475569;
+    --workflow-onboarding-border: #CBD5E1;
+    --workflow-compliance-bg: #E2E8F0;
+    --workflow-compliance-text: #334155;
+    --workflow-compliance-border: #94A3B8;
+    --workflow-review-bg: #F8FAFC;
+    --workflow-review-text: #64748B;
+    --workflow-review-border: #E2E8F0;
+    --workflow-approval-bg: #F1F5F9;
+    --workflow-approval-text: #1E293B;
+    --workflow-approval-border: #CBD5E1;
+
+    /* Checkmark Pastel */
+    --checkmark-bg: var(--priority-medium-bg);
+    --checkmark-text: var(--priority-medium-text);
+    --checkmark-border: var(--priority-medium-border);
+
+    /* Legacy compatibility mapping */
+    --color-background: var(--surface-page);
+    --color-foreground: var(--text-body);
+    --color-card: var(--surface-card);
+    --color-card-foreground: var(--text-body);
+    --color-popover: var(--surface-card);
+    --color-popover-foreground: var(--text-body);
+    --color-muted: var(--neutral-200);
+    --color-muted-foreground: var(--text-muted);
+    --color-border: var(--surface-border);
+    --color-input: var(--white);
+    --color-ring: var(--focus-ring);
+    --color-primary: var(--btn-primary-bg);
+    --color-primary-foreground: var(--btn-primary-text);
+    --color-secondary: var(--btn-secondary-bg);
+    --color-secondary-foreground: var(--btn-secondary-text);
+    --color-accent: var(--brand-700);
+    --color-accent-foreground: var(--text-inverse);
+    --color-success: var(--banner-success-bg);
+    --color-success-foreground: var(--banner-success-text);
+    --color-warning: var(--banner-warning-bg);
+    --color-warning-foreground: var(--banner-warning-text);
+    --color-error: var(--banner-danger-bg);
+    --color-error-foreground: var(--banner-danger-text);
+    --color-destructive: var(--banner-danger-bg);
+    --color-destructive-foreground: var(--banner-danger-text);
+
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  body, p, span, div, input, button, select, textarea {
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Averra Color System Utility Classes */
+  .button--primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
+  .button--primary:hover {
+    background: var(--btn-primary-bg-hover);
+  }
+  .button--primary:active {
+    background: var(--btn-primary-bg-active);
+  }
+  .button--secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-border);
+  }
+  .button--secondary:hover {
+    background: var(--neutral-100);
+  }
+  .button--danger {
+    background: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+  }
+  
+  .link {
+    color: var(--link);
+  }
+  .link:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+  
+  .input {
+    background: var(--white);
+    border: 1px solid var(--surface-border);
+    color: var(--text-body);
+  }
+  .input:focus {
+    outline: 2px solid var(--focus-ring);
+    border-color: var(--brand-700);
+  }
+  
+  .card {
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+  }
+  
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+  .sidebar .item--active {
+    background: var(--sidebar-item-active-bg);
+    color: var(--sidebar-text-active);
+    border-left: 3px solid var(--sidebar-accent);
+  }
+  .sidebar .item--hover:hover {
+    background: var(--sidebar-item-hover-bg);
+    color: var(--sidebar-text-active);
+  }
+  
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    line-height: 1;
+    border: 1px solid var(--pill-border);
+    background: var(--pill-bg);
+    color: var(--pill-text);
+  }
+
+  /* Priority Badges */
+  .priority--low {
+    background: var(--priority-low-bg);
+    color: var(--priority-low-text);
+    border: 1px solid var(--priority-low-border);
+  }
+  .priority--medium {
+    background: var(--priority-medium-bg);
+    color: var(--priority-medium-text);
+    border: 1px solid var(--priority-medium-border);
+  }
+  .priority--high {
+    background: var(--priority-high-bg);
+    color: var(--priority-high-text);
+    border: 1px solid var(--priority-high-border);
+  }
+
+  /* Workflow Type Badges */
+  .workflow--onboarding {
+    background: var(--workflow-onboarding-bg);
+    color: var(--workflow-onboarding-text);
+    border: 1px solid var(--workflow-onboarding-border);
+  }
+  .workflow--compliance {
+    background: var(--workflow-compliance-bg);
+    color: var(--workflow-compliance-text);
+    border: 1px solid var(--workflow-compliance-border);
+  }
+  .workflow--review {
+    background: var(--workflow-review-bg);
+    color: var(--workflow-review-text);
+    border: 1px solid var(--workflow-review-border);
+  }
+  .workflow--approval {
+    background: var(--workflow-approval-bg);
+    color: var(--workflow-approval-text);
+    border: 1px solid var(--workflow-approval-border);
+  }
+
+  /* Checkmark Styling */
+  .checkmark {
+    background: var(--checkmark-bg);
+    color: var(--checkmark-text);
+    border: 1px solid var(--checkmark-border);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Negative Action Styling */
+  .negative-action {
+    background: var(--negative-bg);
+    color: var(--negative-text);
+    border: 1px solid var(--negative-border);
+  }
+  .negative-action:hover {
+    background: var(--negative-hover-bg);
+  }
+
+  /* Legacy shadow classes */
+  .shadow-subtle {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+
+  .transition-complex {
+    transition: all 300ms ease-out;
+  }
+}
