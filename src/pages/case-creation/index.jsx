@@ -192,9 +192,9 @@ const CaseCreation = () => {
       const invitationSummary = generateCaseInvitationSummary(newCase, emailResults);
       
       // Store case in localStorage (in real app, this would be a backend call)
-      const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+      const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
       existingCases.push(newCase);
-      localStorage.setItem('vouchline_cases', JSON.stringify(existingCases));
+      localStorage.setItem('averra_cases', JSON.stringify(existingCases));
       
       console.log('Case created successfully:', invitationSummary);
       

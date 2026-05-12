@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vouchline Storage Debug</title>
+    <title>Averra Storage Debug</title>
 </head>
 <body>
-    <h1>Vouchline Storage Debug</h1>
+    <h1>Averra Storage Debug</h1>
     <button onclick="clearStorage()">Clear All Storage</button>
     <button onclick="showStorage()">Show Storage</button>
     <button onclick="fixCaseStructure()">Fix Case Structure</button>
@@ -17,13 +17,13 @@
         }
 
         function showStorage() {
-            const cases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+            const cases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
             const output = document.getElementById('output');
             output.innerHTML = '<h2>Current Cases:</h2><pre>' + JSON.stringify(cases, null, 2) + '</pre>';
         }
 
         function fixCaseStructure() {
-            const cases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+            const cases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
             const fixedCases = cases.map(case_ => {
                 if (case_.requirements && !case_.steps) {
                     return {
@@ -39,7 +39,7 @@
                 return caseWithoutRequirements;
             });
             
-            localStorage.setItem('vouchline_cases', JSON.stringify(fixedCases));
+            localStorage.setItem('averra_cases', JSON.stringify(fixedCases));
             document.getElementById('output').innerHTML = '<p>Cases structure fixed! Converted requirements to steps.</p>';
             showStorage();
         }

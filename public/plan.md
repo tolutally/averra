@@ -39,7 +39,7 @@ External Counterparty Experience ✅
 ✅ **No-login "one link" experience** for external participants
 ✅ **Upload Evidence interface** with enhanced FileUploadZone component
 ✅ **Structured Form Steps** for external users
-✅ **Vouchline branding** (updated from Yellow Card to proper Vouchline branding)
+✅ **Averra branding** (updated from Yellow Card to proper Averra branding)
 ✅ **Request tracking and status** system with visual progress indicators
 ✅ **Messages/Communication** system
 ✅ **Professional external branding** with lavender color scheme

@@ -87,7 +87,7 @@ const Sprint0Demo = () => {
               Sprint 0 Foundation
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Vouchline Demo
+              Averra Demo
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
               Experience the foundational features powering modern case management workflows

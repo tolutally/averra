@@ -79,11 +79,11 @@ const CoordinatorWorkspaceNav = ({
           <div className="p-6 border-b border-action-700">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-sm font-medium">V</span>
+                <span className="text-sm font-medium">A</span>
               </div>
               {!collapsed && (
                 <div className="min-w-0">
-                  <h2 className="text-lg font-semibold text-white truncate">VouchLine</h2>
+                  <h2 className="text-lg font-semibold text-white truncate">Averra</h2>
                   <p className="text-sm text-action-300 truncate">Coordinator</p>
                 </div>
               )}
@@ -251,10 +251,10 @@ const CoordinatorWorkspaceNav = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center">
-                      <span className="text-sm font-medium">V</span>
+                      <span className="text-sm font-medium">A</span>
                     </div>
                     <div>
-                      <h2 className="text-lg font-semibold text-white">VouchLine</h2>
+                      <h2 className="text-lg font-semibold text-white">Averra</h2>
                       <p className="text-sm text-action-300">Coordinator</p>
                     </div>
                   </div>

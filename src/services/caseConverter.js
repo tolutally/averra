@@ -59,7 +59,7 @@ export const convertTemplateToCase = (template, caseData, participants = []) => 
 };
 
 export const updateCaseProgress = (caseId, completedSteps) => {
-  const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+  const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
   const updatedCases = existingCases.map(case_ => {
     if (case_.id === caseId) {
       const progress = Math.round((completedSteps / case_.metrics.totalSteps) * 100);
@@ -78,12 +78,12 @@ export const updateCaseProgress = (caseId, completedSteps) => {
     return case_;
   });
   
-  localStorage.setItem('vouchline_cases', JSON.stringify(updatedCases));
+  localStorage.setItem('averra_cases', JSON.stringify(updatedCases));
   return updatedCases.find(case_ => case_.id === caseId);
 };
 
 export const addAuditTrailEntry = (caseId, action, description, user = 'System') => {
-  const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+  const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
   const updatedCases = existingCases.map(case_ => {
     if (case_.id === caseId) {
       const newEntry = {
@@ -104,14 +104,14 @@ export const addAuditTrailEntry = (caseId, action, description, user = 'System')
     return case_;
   });
   
-  localStorage.setItem('vouchline_cases', JSON.stringify(updatedCases));
+  localStorage.setItem('averra_cases', JSON.stringify(updatedCases));
 };
 
 export const getCaseById = (caseId) => {
-  const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+  const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
   return existingCases.find(case_ => case_.id === caseId);
 };
 
 export const getAllCases = () => {
-  return JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+  return JSON.parse(localStorage.getItem('averra_cases') || '[]');
 };

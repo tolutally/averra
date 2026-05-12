@@ -36,7 +36,7 @@ export const sendInvitationEmails = async (participantLinks, caseDetails) => {
         If you have any questions, please contact your coordinator.
         
         Best regards,
-        Vouchline Team
+        Averra Team
       `,
       caseId: link.caseId,
       participantId: link.participantId,
@@ -60,7 +60,7 @@ export const sendInvitationEmails = async (participantLinks, caseDetails) => {
 };
 
 export const sendReminderEmails = async (caseId, participantIds = []) => {
-  const caseData = JSON.parse(localStorage.getItem('vouchline_cases') || '[]')
+  const caseData = JSON.parse(localStorage.getItem('averra_cases') || '[]')
     .find(case_ => case_.id === caseId);
   
   if (!caseData) {
@@ -90,7 +90,7 @@ export const sendReminderEmails = async (caseId, participantIds = []) => {
         ${window.location.origin}/steps/${participant.tokenId}?case=${caseId}
         
         Best regards,
-        Vouchline Team
+        Averra Team
       `,
       sentAt: new Date().toISOString()
     };

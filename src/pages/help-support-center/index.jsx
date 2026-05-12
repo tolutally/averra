@@ -337,7 +337,7 @@ const HelpSupportCenter = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <Icon name="Mail" size={14} className="text-muted-foreground" />
-                      <span className="text-muted-foreground">support@onboardflow.com</span>
+                      <span className="text-muted-foreground">support@averra.com</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-success rounded-full"></div>

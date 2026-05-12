@@ -1,22 +1,22 @@
-# Vouchline Development Server - Troubleshooting Guide
+# Averra Development Server - Troubleshooting Guide
 
 ## 🚀 Quick Start Commands
 
 ### Method 1: Standard NPM
 ```bash
-cd /Users/tobitowoju/Downloads/vouchline
+cd /Users/tobitowoju/Downloads/averra
 npm run dev
 ```
 
 ### Method 2: Direct Vite
 ```bash
-cd /Users/tobitowoju/Downloads/vouchline
+cd /Users/tobitowoju/Downloads/averra
 npx vite --port 5173 --host localhost
 ```
 
 ### Method 3: Force Clear Cache
 ```bash
-cd /Users/tobitowoju/Downloads/vouchline
+cd /Users/tobitowoju/Downloads/averra
 rm -rf node_modules/.vite dist build
 npm run dev
 ```

@@ -19,7 +19,7 @@ const SystemSettings = () => {
   });
 
   const [generalSettings, setGeneralSettings] = useState({
-    organizationName: 'OnboardFlow Solutions',
+    organizationName: 'Averra Solutions',
     timezone: 'America/New_York',
     dateFormat: 'MM/DD/YYYY',
     language: 'en',
