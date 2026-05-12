@@ -12,7 +12,7 @@ const CasesTable = ({ cases = [], onBulkAction = () => {} }) => {
   const [sortConfig, setSortConfig] = useState({ key: 'createdAt', direction: 'desc' });
 
   // Load cases from localStorage (created cases)
-  const createdCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]').map(caseData => ({
+  const createdCases = JSON.parse(localStorage.getItem('averra_cases') || '[]').map(caseData => ({
     id: caseData.id,
     clientName: caseData.clientName,
     workflowType: caseData.templateName,

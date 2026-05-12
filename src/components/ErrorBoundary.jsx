@@ -77,7 +77,7 @@ class ErrorBoundary extends React.Component {
     navigator.clipboard?.writeText(JSON.stringify(bugReport, null, 2));
     
     // Could also open email client or support form
-    window.open(`mailto:support@vouchline.com?subject=Error Report ${this.state.eventId}&body=${encodeURIComponent(JSON.stringify(bugReport, null, 2))}`);
+    window.open(`mailto:support@averra.com?subject=Error Report ${this.state.eventId}&body=${encodeURIComponent(JSON.stringify(bugReport, null, 2))}`);
   };
 
   render() {

@@ -18,7 +18,7 @@ const StepHeader = ({
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Icon name="Shield" size={20} color="white" />
             </div>
-            <span className="text-xl font-semibold text-foreground">OnboardFlow</span>
+            <span className="text-xl font-semibold text-foreground">Averra</span>
           </div>
 
           {/* Progress Indicator */}

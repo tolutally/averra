@@ -28,7 +28,7 @@ const CaseDetail = () => {
     
     // In a real app, this would fetch from backend
     // For now, we'll load from localStorage or use mock data
-    const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+    const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
     const foundCase = existingCases.find(case_ => case_.id === caseId);
     
     console.log('Found case in localStorage:', foundCase);

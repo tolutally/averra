@@ -32,7 +32,7 @@ const CoordinatorDashboard = () => {
 
   // Load created cases from localStorage
   useEffect(() => {
-    const existingCases = JSON.parse(localStorage.getItem('vouchline_cases') || '[]');
+    const existingCases = JSON.parse(localStorage.getItem('averra_cases') || '[]');
     setCases(existingCases);
   }, []);
 

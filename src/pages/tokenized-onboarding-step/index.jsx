@@ -38,7 +38,7 @@ const TokenizedOnboardingStep = () => {
     title: caseContext?.templateName || 'New Onboarding',
     status: 'In Progress',
     company: {
-      name: 'Vouchline', // Company sending the request
+      name: 'Averra', // Company sending the request
       subsidiary: caseContext?.clientName || 'Clarivue' // Client/receiving company
     },
     requestSent: '19 Jun 2025 03:39 am',
